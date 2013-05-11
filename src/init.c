@@ -1,0 +1,13 @@
+#include <hc595.h>
+
+void hc595_init(void)
+{
+	HC595_SER_DDR 		|= HC595_SER_DDRBIT;	
+	HC595_OE_L_DDR 		|= HC595_OE_L_DDRBIT;	
+	HC595_RCLK_DDR 		|= HC595_RCLK_DDRBIT;	
+	HC595_SRCLK_DDR 	|= HC595_SRCLK_DDRBIT;	
+	HC595_SRCLR_L_DDR 	|= HC595_SRCLR_L_DDRBIT;
+	
+	hc595_disable();
+	hc595_clear();
+}
